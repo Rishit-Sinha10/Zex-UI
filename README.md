@@ -1,37 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zex-UI
 
-## Getting Started
+Zex-UI is a web application built with Next.js, React, TypeScript, and Tailwind CSS, featuring reusable UI components.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js App Router**: Configured layout using `next/font` for Geist font integration.
+- **Tailwind CSS Styling**: Utility-first CSS setup via PostCSS and Tailwind v4.
+- **Navigation Bar**: Reusable client-side header component with search and toggle functionality.
+- **TypeScript Configuration**: Module resolution and path aliasing (`@/*`) set up in `tsconfig.json`.
+
+## Project Structure
+
+```
+.
+├── app/
+│   ├── globals.css       # Global styles and Tailwind imports
+│   ├── layout.tsx        # Root layout with Geist font and Navbar
+│   └── page.tsx          # Landing page component
+├── component/
+│   └── ui/
+│       └── navbar.jsx    # Stateful navigation header component
+├── public/
+│   └── images/
+│       └── logo.svg      # Navigation logo asset
+├── next.config.ts        # Next.js configuration
+├── package.json          # Dependencies and scripts
+└── tsconfig.json         # TypeScript compiler configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install project dependencies using Bun:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun install
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+### Development Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the Next.js development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Build and Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Zex-UI
+Build the application for production deployment:
+
+```bash
+bun run build
+```
+
+Start the production server:
+
+```bash
+bun run start
+```
+
+### Code Quality
+
+Run ESLint to check for formatting and syntax errors:
+
+```bash
+bun run lint
+```
+
+## Components
+
+### `Navbar` (`component/ui/navbar.jsx`)
+
+A interactive header navigation component that provides:
+- Logo image branding and site title link (`/`)
+- Accessible search input field with controlled state
+- Stateful toggle button switching between `ON` and `OFF` states
